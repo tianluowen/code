@@ -6,7 +6,7 @@ $(OBJ):main.o
 	@g++ $^ -o $@
 	
 main.o:main.cpp
-	@g++ -c $^ -o $@
+	@g++ -c $(d) $^ -o $@ 
 
 clean:
 	@rm -f $(OBJ) main.o 
