@@ -2,12 +2,11 @@ OBJ=exe
 
 all:$(OBJ)
 
-exe:main.o
-	@g++ main.o -o $(OBJ)
+$(OBJ):main.o
+	@g++ $^ -o $@
 	
 main.o:main.cpp
-	@g++ -c $^ -o main.o
+	@g++ -c $^ -o $@ $(debug) 
 
 clean:
 	@rm -f $(OBJ) main.o 
-
