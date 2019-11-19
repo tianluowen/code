@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <stdio.h>
 
 struct Pizza
 {
@@ -18,7 +19,6 @@ int main(int argc, char *argv[])
     Pizza pizzas[3]; 
 
     cout << "请输入第一个 pizzas.name = ";
-    /* cin >> pizzas[0].name; */
     cin.getline(pizzas[0].name, 20);
     cout << "请输入第一个 pizzas.diameter = ";
     cin >> pizzas[0].diameter;
@@ -26,16 +26,17 @@ int main(int argc, char *argv[])
     cin >> pizzas[0].weight;
     
     cout << "请输入第二个 pizzas.name = ";
+    // 使用getchar 的原因是 输入 weight 后会有一个回车，如果不处理这个字符则跳过cin.getline
+    getchar();
     cin.getline(pizzas[1].name, 20);
-    /* cin >> pizzas[1].name; */
     cout << "请输入第二个 pizzas.diameter = ";
     cin >> pizzas[1].diameter;
     cout << "请输入第二个 pizzas.weight = ";
     cin >> pizzas[1].weight;
     
     cout << "请输入第三个 pizzas.name = ";
+    getchar();
     cin.getline(pizzas[2].name, 20);
-    /* cin >> pizzas[2].name; */
     cout << "请输入第三个 pizzas.diameter = ";
     cin >> pizzas[2].diameter;
     cout << "请输入第三个 pizzas.weight = ";
