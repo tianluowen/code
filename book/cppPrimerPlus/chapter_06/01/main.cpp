@@ -1,27 +1,36 @@
-// date: 2019-11-18 18:46
-// desc: 求出输入两个数之间所有数的和
+// date: 2019-11-28 18:44
+// desc: 从键盘接受输入，判断字符类型
 
 #include <iostream>
+#include <cctype>
 
 int main(int argc, char *argv[])
 {
-    using namespace std;
-    int istart;
-    int iend;
-    int itemp;
-    int sum = 0;
+    std::cout << "Enter text for analysis, and type @"
+        "to terminate input.\n";
 
-    cout << "请输入开始计算的数字";
-    cin >> istart;
-    cout << "请输入结束计算的数字";
-    cin >> iend;
+    char ch;
 
-    for (itemp=istart; itemp<=iend; itemp++)
+    std::cin.get(ch);
+    while (ch != '@')
     {
-       sum += itemp; 
-    }
+        if (!isdigit(ch))
+        {
+            if (islower(ch))
+            {
+                ch = toupper(ch);
+            }
+            else if (isupper(ch))
+            {
+                ch = tolower(ch);
+            }
 
-    cout << istart << " 到 " << iend << " 之间所有数字和为 " << sum << endl;
+            std::cout << ch;
+        }
+
+        std::cin.get(ch);
+    }
+    std::cout << std::endl;
     
     return 0;
 }

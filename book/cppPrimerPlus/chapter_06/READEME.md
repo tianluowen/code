@@ -5,8 +5,8 @@
 03 编写一个菜单驱动程序的雏形。该程序显示一个提供 4 个选项的菜单--每个选项用一个字母标记。如果用户使用有效选项之外的字母进行响应，程序将提示用户输入一个有效的字母，直到用户这样做为止。然后，该程序使用一条 switch 语句，根据用户的选择执行一个简单的操作。该程序的运行情况如下：
 
 ​	Please enter one of the following choices:
-​	c) carnivore        p) pianist
-​	t) tree             	 g) game
+​	c) carnivore            p) pianist
+​	t) tree             	g) game
 ​	f
 ​	Please enter a c, p, t, or g:q
 ​	Please enter a c, p, t, or g:t
@@ -16,16 +16,16 @@
 
 ​	// Benevolent Order of Programmers name Structure
 ​	struct bop {
-​		char fullname[strsize];   // real name
+​		char fullname[strsize];         // real name
 ​		char title[strsize];            // job title
-​		char bopname[strsize];  // secret Bop name 
-​		int preferencr;				  // 0 = fullname, 1 = title, 2 = bopname
+​		char bopname[strsize];          // secret Bop name 
+​		int preferencr;				    // 0 = fullname, 1 = title, 2 = bopname
 ​	}
 
 ​	该程序创建一个由上述结构组成的小型数组，并将其初始化为适当的值。另外，该程序使用一个循环。让用户在线面的选项中递归进行选择：
 
 ​	a. display by name 			b. display by title
-​	c. display by bepname 	  d. display by preference
+​	c. display by bepname 	    d. display by preference
 ​	q. quit
 
 ​	注意：“display by preference” 并不意味着显示成员的偏好，而是以为卓根据成员的偏好来列出成员。例如，如果编号为 1，则选择 d 将侠士程序员的头衔。该程序运行情况如下：
