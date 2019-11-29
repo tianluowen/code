@@ -3,16 +3,34 @@
 
 #include <iostream>
 #include <cctype>
+#include <string>
 
 int main(int argc, char *argv[])
 {
     const int arrysize = 10;
     double donation[arrysize];
+    string strdouble;
+    int doulen = 0;
+
+    std::cout << "Enter 10 donation\n";
     
     int i = 0;
     while (i < arrysize)
     {
-        std::cin >> donation[i];
+        std::cin >> strdouble;
+        doulen = strdouble.size();
+
+        int j = 0;
+        while (j < doulen)
+        {
+            if (!isdigit(strdouble[j] && strdouble[j] != '.'))
+            {
+                std::cout << "Input error.\n";
+                return 0;
+            }
+        }
+        donation[i] = atof(strdouble);
+
         /* if (!isdigit(donation[i])) */
         /* { */
         /*     break; */
