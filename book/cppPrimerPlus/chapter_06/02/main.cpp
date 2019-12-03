@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     const int arrysize = 10;
     double donation[arrysize];
-    string strdouble;
+    std::string strdouble;
     int doulen = 0;
 
     std::cout << "Enter 10 donation\n";
@@ -23,13 +23,14 @@ int main(int argc, char *argv[])
         int j = 0;
         while (j < doulen)
         {
-            if (!isdigit(strdouble[j] && strdouble[j] != '.'))
+            if (!isdigit(strdouble[j]) && strdouble[j] != '.')
             {
                 std::cout << "Input error.\n";
                 return 0;
             }
+            j++;
         }
-        donation[i] = atof(strdouble);
+        donation[i] = atof(strdouble.c_str());
 
         /* if (!isdigit(donation[i])) */
         /* { */
@@ -38,12 +39,26 @@ int main(int argc, char *argv[])
         i++;
     }
 
-    int temp = 0;
-    while (temp < i + 1 && temp < arrysize) 
+    i = 0;
+    double sum = 0;
+    double avg = 0;
+    for (; i < arrysize; i++)
     {
-        std::cout << donation[temp] << std::endl;
-        temp++;
+        sum += donation[i];
     }
+    avg = sum / arrysize;
+    std::cout << "这10个数的平均值为: " << avg << std::endl;
+
+    int n = 0;
+    i = 0;
+    for (; i < arrysize; i++)
+    {
+        if (donation[i] > avg)
+        {
+            n++;
+        }
+    }
+    std::cout << "有 " << n << " 数的值大于平均值." << std::endl;
 
     return 0;
 }
