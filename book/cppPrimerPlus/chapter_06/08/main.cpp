@@ -6,6 +6,7 @@
 #include <cctype>
 #include <string>
 
+
 const int SIZE = 60;
 
 int main(int argc, char *argv[])
