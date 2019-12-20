@@ -6,15 +6,28 @@
 #include <cctype>
 #include <string>
 
-
 const int SIZE = 60;
 
 int main(int argc, char *argv[])
 {
     char filename[SIZE];
+    int countFlag = 1;
+
+    // 接收文件名
     std::ifstream inFile;
-    std::cout << "Enter name of test file: ";
+    std::cout << "请输入要测试的文件名: ";
     std::cin.getline(filename, SIZE);
+
+    // 输入统计方式
+    do{
+        std::cout << "请输入统计方式: 0 - 不统计空格、回车等空白符\n";
+        std::cout << "              : 1 - 统计空格、回车等空白符\n";
+        std::cout << "              : ___\b\b";
+        std::cin >> countFlag;
+    }
+    while (countFlag != 0 && countFlag != 1);
+
+    // 打开文件
     inFile.open(filename);
     if (!inFile.is_open())
     {
@@ -23,17 +36,43 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    // 统计字符
     char ch;
     int countch = 0;
-    inFile >> ch;
+    if (countFlag == 2)
+    {
+        inFile.get(ch);
+    }
+    else if (countFlag == 1)
+    {
+        inFile >> ch;
+    }
+    else 
+    {
+        std::cout << "输入统计方式错误\n";
+        return 0;
+    }
+        
     while (inFile.good())
     {
         countch++; 
-        inFile >> ch;
+        if (countFlag == 2)
+        {
+            inFile.get(ch);
+        }
+        else if (countFlag == 1)
+        {
+            inFile >> ch;
+        }
+        else 
+        {
+            std::cout << "输入统计方式错误\n";
+            return 0;
+        }
     }
     if (inFile.eof())
     {
-        std::cout << "End of file readed.\n";
+        std::cout << "\nEnd of file readed.\n";
         std::cout << filename << " 总共有 " << countch << " 个字符.\n";
     }
     else if (inFile.fail())
