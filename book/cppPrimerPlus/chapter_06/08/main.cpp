@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
     // 统计字符
     char ch;
     int countch = 0;
-    if (countFlag == 2)
+    if (countFlag == 0)
     {
         inFile.get(ch);
     }
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
     while (inFile.good())
     {
         countch++; 
-        if (countFlag == 2)
+        if (countFlag == 0)
         {
             inFile.get(ch);
         }

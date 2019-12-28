@@ -11,9 +11,9 @@ int main(int argc, char *argv[])
     int itemp;
     int sum = 0;
 
-    cout << "请输入开始计算的数字";
+    cout << "请输入开始计算的数字: ";
     cin >> istart;
-    cout << "请输入结束计算的数字";
+    cout << "请输入结束计算的数字: ";
     cin >> iend;
 
     for (itemp=istart; itemp<=iend; itemp++)
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
        sum += itemp; 
     }
 
-    cout << istart << " 到 " << iend << " 之间所有数字和为 " << sum << endl;
+    cout << istart << " 到 " << iend << " 之间所有数字和为: " << sum << endl;
     
     return 0;
 }

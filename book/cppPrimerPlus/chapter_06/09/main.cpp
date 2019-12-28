@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     for (int i = 0; i < arraysize; i++)
     {
         // 判断大小
-        if ((pinfo + i)->donation > granddonation);
+        if ((pinfo + i)->donation > granddonation)
         {
             // 输出
             std::cout << (pinfo + i)->name << " " << (pinfo + i)->donation << std::endl;
