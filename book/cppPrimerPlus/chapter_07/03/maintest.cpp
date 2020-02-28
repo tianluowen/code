@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string.h>
 
+template<typedef T>
 struct boxinfo
 {
     char maker[40];
@@ -13,6 +14,7 @@ struct boxinfo
     float volume;
 };
 
+template<typedef T>
 class box
 {
 private:
