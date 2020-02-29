@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string.h>
 
-template<typedef T>
 struct boxinfo
 {
     char maker[40];
@@ -14,7 +13,6 @@ struct boxinfo
     float volume;
 };
 
-template<typedef T>
 class box
 {
 private:
@@ -30,8 +28,11 @@ public:
     }
     void printStructBox(void)
     {
-        std::cout << "cuboidbox.maker is " << cuboidbox.maker << "\ncuboidbox.height = " << cuboidbox.height << "\ncuboidbox.width = " << cuboidbox.width 
-            << "\ncuboidbox.length = " << cuboidbox.length << "\ncuboidbox.volume = " << cuboidbox.volume << std::endl;
+        std::cout << "cuboidbox.maker is " << cuboidbox.maker 
+            << "\ncuboidbox.height = " << cuboidbox.height 
+            << "\ncuboidbox.width = " << cuboidbox.width 
+            << "\ncuboidbox.length = " << cuboidbox.length 
+            << "\ncuboidbox.volume = " << cuboidbox.volume << std::endl;
     }
 
     void setStructBoxMemberVolume(void)
@@ -41,25 +42,15 @@ public:
 };
 
 
-/* void printStructBox(box st); */
-/* void setStructBoxMemberVolume(box* pst); */
-
 int main(int argc, char *argv[])
 {
-    box *cuboid = new box("长方体", 3.13, 2.15, 3.48);
+    box *cuboid = new box((char*)"长方体", 3.13, 2.15, 3.48);
 
     cuboid->printStructBox();
     cuboid->setStructBoxMemberVolume();
+    std::cout << std::endl;
     cuboid->printStructBox();
-
-    /* printStructBox(boxinfo); */
-    /* setStructBoxMemberVolume(&boxinfo); */
-    /* std::cout << std::endl; */
-    /* printStructBox(boxinfo); */
 
     return 0;
 }
-
-
-
 

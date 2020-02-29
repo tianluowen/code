@@ -1,16 +1,19 @@
 CC=clang++
 RM=rm -f
-OBJ=exe exetes
+OBJ=exe exetest
 
 all:$(OBJ)
 
-$(OBJ):*.o
+exe:main.o
+	$(CC) $^ -o $@
+
+exetest:maintest.o
 	$(CC) $^ -o $@
 	
 main.o:main.cpp
 	$(CC) -c $^ -o $@ -std=c++11 $(debug)
 
-mainteset.o:maintest.cpp
+maintest.o:maintest.cpp
 	$(CC) -c $^ -o $@ -std=c++11 $(debug)
 
 clean:
