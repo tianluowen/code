@@ -1,5 +1,5 @@
 // date: 2020-03-01
-// desc: 测试类的 初始化语法
+// desc: 测试加 const
 
 #include <iostream>
 #include "./complex.h"
