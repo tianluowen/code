@@ -1,9 +1,9 @@
 // date: 2020-03-01
-// desc: 负数测试类的头文件
+// desc: 复数测试类的头文件
 
 // 防御式声明
-#ifndef __complex__
-#define __complex__
+#ifndef __COMPLEX__
+#define __COMPLEX__
 
 class complex
 {

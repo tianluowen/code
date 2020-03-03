@@ -1,5 +1,5 @@
 // date: 2020-03-01
-// desc: 测试类的 初始化语法
+// desc: 测试生成类对象的三种方式 
 
 #include <iostream>
 #include "./complex.h"

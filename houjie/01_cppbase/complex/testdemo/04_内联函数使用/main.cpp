@@ -1,5 +1,5 @@
 // date: 2020-03-01
-// desc: 测试类的 初始化语法
+// desc: 测试 inline
 
 #include <iostream>
 #include "./complex.h"
@@ -23,3 +23,5 @@ int main(int argc, char *argv[])
 }
 
 // 结果: 内联函数如何使用
+//       内联函数，只需要在 函数声明 或者 函数定义处加上 inline 关键字就可以
+//       或者两者都加上都可以

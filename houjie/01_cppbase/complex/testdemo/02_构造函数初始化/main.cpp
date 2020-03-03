@@ -1,5 +1,5 @@
 // date: 2020-03-01
-// desc: 测试类的 初始化语法
+// desc: 测试构造函数赋值语法
 
 #include <iostream>
 #include "./complex.h"
