@@ -14,6 +14,13 @@ int main(int argc, char *argv[])
     std::cout << "c2: re = " << c2.real() << ", im = " << c2.imag() << std::endl;
     std::cout << "c3: re = " << pc3->real() << ", im = " << pc3->imag() << std::endl;
 
+    c1 += c2;
+    std::cout << "c1: re = " << c1.real() << ", im = " << c1.imag() << std::endl;
+
+    int sum;
+    sum = c1.func(c2);
+    std::cout << "使用 c1 调用 fun 求得 c2 的虚部实部和为 : " << sum << std::endl;
+
     delete pc3;
 
     return 0;

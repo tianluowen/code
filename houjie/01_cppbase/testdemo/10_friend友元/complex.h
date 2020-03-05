@@ -10,11 +10,18 @@ class complex
 {
 private:
     double re, im;
+    friend complex& __doapl(complex*, const complex&);
+    // complex& __doapl(complex*, const complex&);
 
 public:
     complex (double r = 0, double i = 0)
         : re(r), im(i)
     { }
+
+    complex& operator += (const complex r)
+    {
+        return __doapl(this, r);
+    }
 
     // 读值
     double real()
@@ -25,10 +32,16 @@ public:
     double imag()
     const
     {
-        std::cout << "使用加 const 的函数 ";
         return im;
     }
 
 };
+
+inline complex& __doapl(complex* ths, const complex& r)
+{
+    ths->re += r.re;
+    ths->im += r.im;
+    return *ths;
+}
 
 #endif
