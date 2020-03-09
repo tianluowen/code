@@ -49,12 +49,6 @@ public:
     complex& operator += (const double& x);
     complex& operator -= (const complex& x);
     complex& operator -= (const double& x);
-
-    // 等或者不相等
-
-    // 共轭
-    complex Conjugate(void);
-
 };
 
 // += 重载
@@ -194,13 +188,55 @@ inline complex operator / (const double& x, const complex& y)
                    (0 - a * d) / (c * c + d * d));
 }
 
-// 共轭
-inline complex Conjugate(void)
+// 正号 负号
+inline complex operator + (const complex& x)
 {
-    return complex(this->re, -this->im);
+    return x;
+}
+
+inline complex operator - (const complex& x)
+{
+    return complex(-x.real(), -x.imag());
+}
+
+// == 重载
+inline bool operator == (const complex& x, const complex& y)
+{
+    return x.real() == y.real() && x.imag() == y.imag();
+}
+
+inline bool operator == (const complex& x, const double y)
+{
+    return x.real() == y && x.imag() == 0;
+}
+
+inline bool operator == (const double x, const complex& y)
+{
+    return x == y.real() && y.imag() == 0;
+}
+
+// != 重载
+inline bool operator != (const complex& x, const complex& y)
+{
+    return x.real() != y.real() || x.imag() != y.imag();
+}
+
+inline bool operator != (const complex& x, const double y)
+{
+    return x.real() != y || x.imag() != 0;
+}
+
+inline bool operator != (const double x, const complex& y)
+{
+    return x != y.real() || y.imag() != 0;
+}
+
+// 共轭
+inline complex conj(const complex& x)
+{
+    return complex(x.real(), -x.imag());
 }
 
 }
-
 
 #endif

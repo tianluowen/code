@@ -86,8 +86,38 @@ int main(void)
     c5 = 3 * c5 * c4 * 2;
     std::cout << "c5 = 3 * c5 * c4 * 2, c5 = " << c5 << std::endl;
     
+    // test +
+    std::cout << std::endl << "// test +" << std::endl;
+    std::cout << "c1 = " << c1 << ", c2 = " << c2 << endl;
+    c1 = +c1;
+    std::cout << "c1 = +c1, c1 = " << c1 << std::endl;
+    c2 = -c2;
+    std::cout << "c2 = -c2, c2 = " << c2 << std::endl;
+    c2 = c1 + 2 * -c2;
+    std::cout << "c2 = c1 + 2 * c2, c2 = " << c2 << std::endl;
 
-    
+    bool b = true;
+    std::cout << std::endl << "// test == !=" << std::endl;
+    std::cout << "c1 = " << c1 << ", c2 = " << c2 << endl;
+    b = c1 == c2;
+    std::cout << "b = c1 == c2, b = " << b << std::endl;
+    b = c1 != c2;
+    std::cout << "b = c1 != c2, b = " << b << std::endl;
+    c2.real(3);
+    c2.imag(1.25);
+    std::cout << "set c2.re = 3, set c2.im = 1.25, c2 = " << c2 << std::endl;
+    b = c1 == c2;
+    std::cout << "b = c1 == c2, b = " << b << std::endl;
+    b = c1 != c2;
+    std::cout << "b = c1 != c2, b = " << b << std::endl;
+
+    std::cout << std::endl << "// test cong()" << std::endl;
+    std::cout << "c1 = " << c1 << ", c2 = " << c2 << endl;
+    c2 = conj(c1);
+    std::cout << "c2 = conj(c1), c2 = " << c2 << std::endl;
+    c2 = conj(c1 + c2);
+    std::cout << "c2 = conj(c1 + c2), c2 = " << c2 << std::endl;
+
     delete pc3;
 
     return 0;
