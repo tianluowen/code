@@ -6,12 +6,21 @@
 
 int main(int argc, char *argv[])
 {
-    String s1("Hello world!");                       // 栈中分配
-    // const complex c2 = complex(2, 2);       // 栈中分配
-    // complex* pc3 = new complex(4);          // 堆中分配
+    std::cout << "在堆中创创建" << std::endl;
+    // String s1("Hello world!");                       // 栈中分配
+    const String c2 = String("Hello");       // 栈中分配
+    
+    std::cout << std::endl;
+    std::cout << "在栈中创创建" << std::endl;
+    String* pc3 = new String("Hello !");          // 堆中分配
 
+    std::cout << std::endl;
 
-    // delete pc3;
+    std::cout << "释放栈中的对象" << std::endl;
+    delete pc3;
+    std::cout << "释放完成" << std::endl;
+
+    std::cout << std::endl;
 
     return 0;
 }
