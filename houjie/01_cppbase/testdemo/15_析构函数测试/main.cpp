@@ -1,5 +1,5 @@
-// date: 2020-03-06
-// desc: 使用操作符重载
+// date: 2020-03-16
+// desc: 测试析构函数
 
 #include <iostream>
 #include "./mystring.h"
@@ -7,12 +7,12 @@
 int main(int argc, char *argv[])
 {
     std::cout << "在堆中创创建" << std::endl;
-    // String s1("Hello world!");                       // 栈中分配
-    const String c2 = String("Hello");       // 栈中分配
+    // String s1("Hello world!");                   // 栈中分配
+    const String c2 = String("Hello");              // 栈中分配
     
     std::cout << std::endl;
     std::cout << "在栈中创创建" << std::endl;
-    String* pc3 = new String("Hello !");          // 堆中分配
+    String* pc3 = new String("Hello !");            // 堆中分配
 
     std::cout << std::endl;
 
