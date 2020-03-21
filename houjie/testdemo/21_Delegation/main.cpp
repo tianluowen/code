@@ -1,5 +1,5 @@
-// date: 2020-03-20
-// desc: is a
+// date: 2020-03-21
+// desc: Delegation
 
 #include <iostream>
 
@@ -22,16 +22,18 @@ class B
 public:
     B()
     {
+        pa = new A();
         std::cout << "这是 B()" << std::endl;
     }
 
     ~B()
     {
+        delete pa;
         std::cout << "这是 ~B()" << std::endl;
     }
 
 private:
-    A a;
+    A* pa;
 };
 
 int main(void)
@@ -42,5 +44,4 @@ int main(void)
     return 0;
 }
 
-// 结论：先构建里面的类，在构造外面的类，先释放外面的类，在释放里面的类
-//       先调用 A 的构造函数，在调用 B 的构造函数，先调用 B 的构造函数，在调用 A 的构造函数
+// 结论：需要自己管理。生命周期完全是创建者决定的。
