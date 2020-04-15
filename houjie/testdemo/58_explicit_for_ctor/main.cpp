@@ -12,21 +12,19 @@ public:
     {
         cout << "P(int a, int b)" << endl;
     }
-    explicit P(initializer_list<int> values)
-    {
-        cout << "P(initializer_list<int> values)" << endl; 
-    }
+    // P(initializer_list<int> values)
+    // {
+    //     cout << "P(initializer_list<int> values)" << endl; 
+    // }
     // P(int a, int b, int c)
     explicit P(int a, int b, int c)
     {
         cout << "P(int a, int b, int c)" << endl;
     }
-    // P(P& p)=default;
 };
 
-void fp(P& p) 
-{
-};
+void fp(const P&)
+{}
 
 int main(void)
 {
@@ -36,22 +34,21 @@ int main(void)
     P p2 {77, 5};
     P p3 {77, 5, 43};
     // 这边不加 explicit 会调用 构造函数 构造一个 P 类型 在赋值
-    // P p4  = {77, 5};     // error chosen constructor is explicit in copy-initialization
-    // P p5 = {77, 5, 42};  // error chosen constructor is explicit in copy-initialization
+    P p4  = {77, 5};     
+    // P p5 = {77, 5, 42};  // ERROR chosen constructor is explicit in copy-initialization
     P p6 (77, 5, 42);
 
     cout << endl;
-    // fp({47, 11});
-    // fp({47, 11, 3});
+    fp({47, 11}); 
+    // fp({47, 11, 3});    // ERROR chosen constructor is explicit in copy-initialization
     fp(P {47, 11});
     fp(P {47, 11, 3});
+    fp(P (47, 11, 3));
 
     cout << endl;
-    P p11 {77, 5, 42, 500};
-    // P p12 = {77, 5, 42, 5000}; // error chosen constructor is explicit in copy-initialization
-    // P p13 = {10};              // error chosen constructor is explicit in copy-initialization  
-
-
+    P p11 {77, 5, 42};    
+    // P p12 = {77, 5, 42}; // ERROR chosen constructor is explicit in copy-initialization
+    P p13 = {2, 3};
 
     return 0;
 }
