@@ -57,7 +57,7 @@ int getinfo(student pa[], int n);
 
 // display1() takes the address of student structre as an
 // argument and displays the structure's contents
-void dispalay1(student st);
+void display1(student st);
 
 // display2() takes the address of student structure as an
 // argument and displays the structure's contents
@@ -70,7 +70,7 @@ void display3(const student pa[], int n);
 
 int mian()
 {
-    count << "Enter class size: ";
+    cout << "Enter class size: ";
     int class_size;
     cin >> class_size;
     while (cin.get() != '\n')
@@ -86,7 +86,7 @@ int mian()
     display3(ptr_stu, entered);
     delete [] ptr_stu;
     cout << "Done\n";
-    return 0
+    return 0;
 }
 ```
 
@@ -105,7 +105,7 @@ double add(double x, double y)
 double q = calculate(2.5, 10.4, add);
 ```
 
-请编写一个程序，它调用上述两个安徽省农户和至少另一个与 add() 类似的函数。该程序使用循环来让用户成对地输入数字。对于每个数字，程序都使用 calculate() 来调用 add() 和至少一个其它的函数。如果中毒者爱冒险，可以尝试创建一个指针数组，其中的指针指向 add() 样式的函数，并编写一个循环，使用这些指针连续让 calculate() 调用这些函数。提示：线面是声明这种指针数组的方式，其中包含三个指针：
+请编写一个程序，它调用上述两个安徽省农户和至少另一个与 add() 类似的函数。该程序使用循环来让用户成对地输入数字。对于每个数字，程序都使用 calculate() 来调用 add() 和至少一个其它的函数。如果读者爱冒险，可以尝试创建一个指针数组，其中的指针指向 add() 样式的函数，并编写一个循环，使用这些指针连续让 calculate() 调用这些函数。提示：下面是声明这种指针数组的方式，其中包含三个指针：
 
 ```cpp
 double (*pf[3])(double, double);
