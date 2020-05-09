@@ -58,6 +58,8 @@ all:
 	cd ./57_initializer_list && make
 	cd ./58_explicit_for_ctor && make
 	cd ./59_range_based_for_statement && make
+	cd ./60_default_delete && make
+	cd ./61_lambdas && make
 
 clean:
 	cd ./01_如何创建一个类 && make clean
@@ -118,4 +120,6 @@ clean:
 	cd ./57_initializer_list && make clean
 	cd ./58_explicit_for_ctor && make clean
 	cd ./59_range_based_for_statement && make clean
+	cd ./60_default_delete && make clean
+	cd ./61_lambdas && make clean
 
