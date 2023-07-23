@@ -60,7 +60,6 @@ int main(void)
     num.push_back(2);
     num.push_back(7);
     num.push_back(11);
-    int t = 9;
 
     vector<int> index;
 
